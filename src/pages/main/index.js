@@ -8,13 +8,27 @@ import Col from 'react-bootstrap/Col';
 import './style.css';
  
 export default class Main extends Component{
+    
+    constructor(){
+        super();
+        this.state = {
+            title: 'Sistema Web',
+            usuario: []
+        }
+    }
+    //faz chamadas ajax
+    componentDidMount(){
+        console.log('Componente é chamado...');
+    }
+
     render(){
+        let title = this.state.title;
 		return (
 			<Jumbotron fluid>
                 <Container>
                     <Row>
                         <Col xs={12} id="centralize">
-                            <h1>Sistema Web</h1>
+                            <h1>{title}</h1>
                             <p>
                             Aguarde para mais informações.<br/>
                             Sistema em fase de desenvolvimento.
