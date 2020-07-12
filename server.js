@@ -7,7 +7,7 @@ const PORT = 3000;
 let pool = new pg.Pool({
     user: 'postgres',
     database: 'postgres',
-    password: '#admin1801',
+    password: '#senha',
     host: 'localhost',
     port: 5432,
     max: 10
