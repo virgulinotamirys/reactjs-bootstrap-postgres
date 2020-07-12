@@ -8,7 +8,7 @@ const PORT = 3000;
 let pool = new pg.Pool({
     user: 'postgres',
     database: 'postgres',
-    password: '#admin1801',
+    password: '#senha',
     host: 'localhost',
     port: 5432,
     max: 10
@@ -46,6 +46,5 @@ app.use(function (request, response, next) {
     response.header("Acess-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT));
