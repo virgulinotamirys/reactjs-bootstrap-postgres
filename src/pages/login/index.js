@@ -13,7 +13,9 @@ export default class Login extends Component{
     constructor(){
         super();
         this.state = {
-            showHide : false
+            title: 'Faça seu login',
+            showHide : false,
+            usuario: [],
         }
     }
 
@@ -23,12 +25,13 @@ export default class Login extends Component{
 
 
     render(){
+        let title = this.state.title;
 		return (
             <Container>
                 <Row className="dp-center">
                     <Col xs={12} md={6} >
                     <form>
-                        <h3>Login</h3>
+                        <h3>{title}</h3>
 
                         <div className="form-group">
                             <label>Email</label>
@@ -47,7 +50,7 @@ export default class Login extends Component{
                             </div>
                         </div>
 
-                        <button type="submit" className="btn btn-primary btn-block">Enviar</button>
+                        <button type="submit"  className="btn btn-primary btn-block">Enviar</button>
                         <p className="forgot-password text-right">
                             Esqueceu a <a href="#" onClick={() => this.handleModalShowHide()}>senha?</a>
                         </p>
@@ -84,7 +87,7 @@ export default class Login extends Component{
                     </Col>
                 </Row>
             </Container>
-		)
+		);
 	}
 }
 
