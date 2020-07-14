@@ -12,11 +12,19 @@ export default class Login extends Component{
 
     constructor(){
         super();
+        this.usuarioForm = React.createRef();
+        this.email = React.createRef();
+        this.password = React.createRef();
         this.state = {
             title: 'Faça seu login',
             showHide : false,
             usuario: [],
         }
+    }
+
+    //faz chamadas ajax
+    componentDidMount(){
+        console.log('Componente é chamado...');
     }
 
     handleModalShowHide() {
@@ -26,21 +34,23 @@ export default class Login extends Component{
 
     render(){
         let title = this.state.title;
+        let usuario = this.state.usuario;
+
 		return (
             <Container>
                 <Row className="dp-center">
                     <Col xs={12} md={6} >
-                    <form>
+                    <form ref={this.usuarioForm}>
                         <h3>{title}</h3>
 
                         <div className="form-group">
                             <label>Email</label>
-                            <input type="email" className="form-control" placeholder="Enter email" />
+                            <input type="email" ref={this.email} className="form-control" placeholder="Enter email" />
                         </div>
 
                         <div className="form-group">
                             <label>Senha</label>
-                            <input type="password" className="form-control" placeholder="Enter senha" />
+                            <input type="password" ref={this.password}  className="form-control" placeholder="Enter senha" />
                         </div>
 
                         <div className="form-group">
@@ -57,6 +67,7 @@ export default class Login extends Component{
                         <p className="signup text-right">
                             <a href="/signup">Cadastre-se</a>
                         </p>
+
                     </form>
 
 
